@@ -18,7 +18,7 @@ canvas {
 	font-family: Just Another Hand, Verdana, sans-serif;
 }
 
-.portal {
+.universe {
 	font-size: 6em;
 	font-family: Just Another Hand, Verdana, sans-serif;
 }
@@ -66,14 +66,19 @@ canvas {
 .animateClass span:nth-child(6) { animation-delay: 1.5s }
 .animateClass span:nth-child(7) { animation-delay: 1.75s }
 .animateClass span:nth-child(8) { animation-delay: 2s }
-.animateClass span:nth-child(9) { animation-delay: 2.25s }
-.animateClass span:nth-child(10) { animation-delay: 2.5s }
 
 .animateClass2 span {
   float: left;
   margin: 20px;
-  animation: FadeIn 2.5s linear;
+  animation: FadeIn 1s linear;
   animation-fill-mode: both;
 }
 
 .animateClass2 span:nth-child(1) { animation-delay: 2.75s }
+.animateClass2 span:nth-child(2) { animation-delay: 3s }
+.animateClass2 span:nth-child(3) { animation-delay: 3.25s }
+.animateClass2 span:nth-child(4) { animation-delay: 3.5s }
+.animateClass2 span:nth-child(5) { animation-delay: 3.75s }
+.animateClass2 span:nth-child(6) { animation-delay: 4s }
+.animateClass2 span:nth-child(7) { animation-delay: 4.25s }
+.animateClass2 span:nth-child(8) { animation-delay: 4.5s }
