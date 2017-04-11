@@ -28,11 +28,31 @@
 			}
 			ctx.fill();
 	}
+
+	function drawButton(canvas, ctx, x, y) {
+		// Draw circle
+		ctx.beginPath();
+		ctx.arc(x, y,50,0,2*Math.PI);
+		ctx.stroke();
+		ctx.fillStyle = "rgba(255, 254, 196, 1)";
+		ctx.shadowColor = "rgba(255, 254, 196, 0.5)";
+		ctx.shadowBlur = 7;
+		ctx.fill();
+
+		// Draw text
+		ctx.font = '32pt Just Another Hand';
+        ctx.fillStyle = 'black';
+        ctx.textAlign = 'center';
+        ctx.fillText('Enter', x, y+3);
+        
+        
+        
+	}
   
   $(function(){
     
-		var canvas = document.getElementById("space");
-		var context = canvas.getContext("2d");
+	var canvas = document.getElementById("space");
+	var context = canvas.getContext("2d");
     
     onresize = function(){
       canvas.width = canvas.clientWidth;
@@ -45,6 +65,8 @@
         generateStar(canvas, context, 3);
       }
       , 24);
+
+    drawButton(canvas, context, canvas.width/2 - 30, canvas.height - 100);
 
     setTimeout( // Stop sreating stars after 10s
       function(){ clearInterval(interval); }
