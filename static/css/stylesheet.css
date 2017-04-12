@@ -1,9 +1,11 @@
 html, body {
-	/*background-color: black;*/
+	background-color: black;
 	font-family: Just Another Hand, Verdana, sans-serif;
 	height: 100%;
 	margin: 0;
 	color: white;
+	background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  	overflow: hidden;
 }
 
 canvas {
