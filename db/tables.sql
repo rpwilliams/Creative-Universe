@@ -1,5 +1,5 @@
 /* Delete the table if it already exists */
-DROP TABLE IF EXISTS Ideas;
+-- DROP TABLE IF EXISTS Ideas;
 
 /* Create the schema */
 CREATE TABLE Ideas(

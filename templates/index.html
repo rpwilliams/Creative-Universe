@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Creative Portal</title>
+		<title>Creative Universe</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/stars.css">
 		<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 
 	<body>
-		<div class="container stars stars2 stars3">
+		<div id="space">
+		  <div class="stars"></div>
+		  <div class="stars"></div>
+		  <div class="stars"></div>
+		  <div class="stars"></div>
+		  <div class="stars"></div>
+		</div>
+		<div class="container">
 			<!-- Creativity Fade in -->
 			<div class="row">
 				<div class="column">
@@ -39,9 +47,10 @@
 							<span>S</span>
 							<span>E</span>
 						</p>
-					</div>
-					
+					</div>	
 				</div>
+				<a style="font-size: 2.5em; position: absolute; top: 80%; left: 35%" class="ghost-button" href="{{ url_for('add') }}">ADD</a>
+				<a style="font-size: 2.5em; position: absolute; top: 80%; right: 35%" class="ghost-button" href="#">EXPLORE</a>
 			</div>
 		</div>
 	</body>
