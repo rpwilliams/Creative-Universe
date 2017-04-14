@@ -14,7 +14,7 @@
 	<body>
 		<div class="container">
 			<h1 font-family="Just Another Hand"><u>Submit a new idea</u></h1>
-			<form action="{{ url_for('ideas') }}" method="post" role="form">
+			<form method="post" action="{{ url_for('ideas') }}" role="form">
 				<div class="form-group">
 					<label for="title">Title:</label>
 					<input type="text" class="form-control" name="title" placeholder="What is the name of your idea?">
@@ -25,7 +25,7 @@
 				</div>		
 				<div class="form-group">
 					<label for="description">Description:</label>
-					<textarea class="form-control" rows="10" id="description" placeholder="Enter the specific details of your idea here!"></textarea>
+					<textarea class="form-control" rows="10" id="description" name="description" placeholder="Enter the specific details of your idea here!"></textarea>
 				</div>		
 				<button type="submit" class="btn btn-lg btn-success">
 	      			<span class="glyphicon glyphicon-pencil"></span> 

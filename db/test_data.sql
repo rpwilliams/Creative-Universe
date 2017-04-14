@@ -1,1 +1,1 @@
-INSERT INTO 'Ideas' ('idea_ID','name','description','category') VALUES (1,"Test", "jfasfsafj", "Test Category");
+INSERT INTO Ideas (name, category, description) VALUES ("Test", "jfasfsafj", "Test Category");
