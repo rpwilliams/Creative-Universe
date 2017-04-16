@@ -7,6 +7,12 @@ html, body {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 4em;
+}
+p{
+  font-size: 2em;
+}
 .creativity {
 	font-size: 6em;
 }
@@ -90,4 +96,13 @@ html, body {
 .ghost-button:active {
   background-color: #fff;
   color: #000;
+}
+
+tr:hover { 
+   background: grey; 
+}
+td a { 
+   display: block; 
+   border: 1px solid black;
+   padding: 16px; 
 }
