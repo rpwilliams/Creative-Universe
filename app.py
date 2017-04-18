@@ -24,12 +24,14 @@ def add():
 
 @app.route('/ideas', methods=['GET'])
 def ideas():
-	query= execute_query("""SELECT name FROM Ideas WHERE name is not null and name != '' ORDER BY name ASC""")
-	newlist = []
-	for tup in query:
-		llist = ([item.encode('ascii','backslashreplace') for item in tup])
-		newlist.append(llist)
-	return render_template('ideas.html', rows=newlist)
+	query= execute_query("""SELECT name, idea_ID FROM Ideas WHERE name is not null and name != '' ORDER BY name ASC""")
+	#newlist = unicode_to_html(query)
+	return render_template('ideas.html', rows=query)
+
+@app.route('/ideas/<id>', methods=['GET'])
+def ideaDescription(id):
+	query= execute_query("""SELECT * FROM Ideas WHERE idea_ID = %s""", [id])
+	return render_template('idea-description.html')
 
 @app.route('/add/idea-added', methods=['GET', 'POST'])
 def ideaAdded():
@@ -48,6 +50,21 @@ def ideaAdded():
 def viewdb():
 	rows = execute_query("""SELECT * FROM Ideas;""")
 	return '<br>'.join(str(row) for row in rows) # Displays everything in db in the browser
+
+# def unicode_to_html(query): 
+# 	""" Converts UTF-8 unicode from a query
+# 		and converts it to HTML.
+# 		@param {query} The query that fetches the rows in unicode (must only be selecting strings)
+# 		@return list of the new rows in the table not in unicode
+# 	"""
+# 	for tup in query:
+# 		print tup[1]
+# 	newlist = []
+# 	for tup in query:
+# 		llist = ([str(item).encode('ascii','backslashreplace') for item in tup])
+# 		newlist.append(llist)
+# 	return newlist
+
 
 def connect_to_mySQL():
 	""" Connects to mySQL """

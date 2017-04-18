@@ -14,22 +14,27 @@
 	<body>
 		<!-- Main header -->
 		<div class="container">
-			<div class="panel panel-default col-lg-10" style="color: black; font-family: Verdana">
-				<div class="panel-heading"><h4><b>Ideas</b></h4><i>Click an idea for more information</i></div>
-				<div class="panel-body" style="min-height: 600px; max-height: 600px; overflow-y:scroll;">
-					<table class = "table">
-						<thead>
-							<th> Idea Name </th>
-						</thead>
-						<tbody>
-						{% for value in rows %}
-						<tr>
-							<td><a href="{{ url_for('ideaDescription', id = value[1]) }}">{{ value[0] }}</a></td>
-						</tr>
-						</a>
-						{% endfor %}
-						</tbody>
-					</table>
+			<!-- Main header -->
+			<div class="container">
+				<div class="panel panel-default col-lg-10" style="color: black; font-family: Verdana">
+					<div class="panel-heading"><h4><b>Ideas</b></h4><i>Click an idea for more information</i></div>
+					<div class="panel-body" style="min-height: 600px; max-height: 600px; overflow-y:scroll;">
+						<table class = "table">
+							<thead>
+								<th> Idea Name </th>
+							</thead>
+							<tbody>
+							{% for value in rows %}
+							<tr>
+								{% for elem in value %}
+						        <td><a href="{{ url_for('ideaDescription', id = 1) }}">{{ elem }}</a></td>
+						        {% endfor %}
+							</tr>
+							</a>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
