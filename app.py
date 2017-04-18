@@ -30,8 +30,10 @@ def ideas():
 
 @app.route('/ideas/<id>', methods=['GET'])
 def ideaDescription(id):
-	query= execute_query("""SELECT * FROM Ideas WHERE idea_ID = %s""", [id])
-	return render_template('idea-description.html')
+	name = unicode_to_html(execute_query("""SELECT name FROM Ideas WHERE idea_ID = %s""", [id]))
+	category = unicode_to_html(execute_query("""SELECT category FROM Ideas WHERE idea_ID = %s""", [id]))
+	description = unicode_to_html(execute_query("""SELECT description FROM Ideas WHERE idea_ID = %s""", [id]))
+	return render_template('idea-description.html', name=name, category=category, description=description)
 
 @app.route('/add/idea-added', methods=['GET', 'POST'])
 def ideaAdded():
@@ -51,19 +53,17 @@ def viewdb():
 	rows = execute_query("""SELECT * FROM Ideas;""")
 	return '<br>'.join(str(row) for row in rows) # Displays everything in db in the browser
 
-# def unicode_to_html(query): 
-# 	""" Converts UTF-8 unicode from a query
-# 		and converts it to HTML.
-# 		@param {query} The query that fetches the rows in unicode (must only be selecting strings)
-# 		@return list of the new rows in the table not in unicode
-# 	"""
-# 	for tup in query:
-# 		print tup[1]
-# 	newlist = []
-# 	for tup in query:
-# 		llist = ([str(item).encode('ascii','backslashreplace') for item in tup])
-# 		newlist.append(llist)
-# 	return newlist
+def unicode_to_html(query): 
+	""" Converts UTF-8 unicode from a query
+		and converts it to HTML.
+		@param {query} The query that fetches the rows in unicode (must only be selecting strings)
+		@return list of the new rows in the table not in unicode
+	"""
+	newlist = []
+	for tup in query:
+		llist = ([str(item).encode('ascii','backslashreplace') for item in tup])
+		newlist.append(llist)
+	return newlist
 
 
 def connect_to_mySQL():

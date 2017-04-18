@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/add.css">
 		<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -14,29 +14,32 @@
 	<body>
 		<!-- Main header -->
 		<div class="container">
-			<!-- Main header -->
-			<div class="container">
-				<div class="panel panel-default col-lg-10" style="color: black; font-family: Verdana">
-					<div class="panel-heading"><h4><b>Ideas</b></h4><i>Click an idea for more information</i></div>
-					<div class="panel-body" style="min-height: 600px; max-height: 600px; overflow-y:scroll;">
-						<table class = "table">
-							<thead>
-								<th> Idea Name </th>
-							</thead>
-							<tbody>
-							{% for value in rows %}
-							<tr>
-								{% for elem in value %}
-						        <td><a href="{{ url_for('ideaDescription', id = 1) }}">{{ elem }}</a></td>
-						        {% endfor %}
-							</tr>
-							</a>
-							{% endfor %}
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+			<table class="table">
+			<h1><u>Idea Title:</u>
+			{% for value in name %} 
+				{% for element in value %}
+					{{ element }} 
+				{% endfor %}
+			{% endfor %} 
+			</h1>
+			<hr>
+			<h1><u>Category:</u>
+			{% for value in category %} 
+				{% for element in value %}
+					{{ element }} 
+				{% endfor %}
+			{% endfor %} 
+			</h1>
+			<hr>
+			<h1><u>Description:</u></h1>
+			<h2>
+				{% for value in description %} 
+					{% for element in value %}
+						{{ element }} 
+					{% endfor %}
+				{% endfor %} 
+			</h2>
+			</table>
 		</div>
 	</body>
 </html>
