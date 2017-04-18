@@ -3,17 +3,18 @@ html, body {
 	height: 100%;
 	font-family: Verdana, sans-serif;
 	background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-  	overflow: hidden;
   	color: white;
   	padding-top: 70px;
 }
 h1 {
-	font-family: Just Another Hand, Verdana, sans-serif;
+	font-family: Verdana, sans-serif;
 	font-size: 5em;
 }
 h2 {
 	font-size: 3em;
+	word-wrap:break-word;
 }
 p {
-	font-size: 2em;
+	font-size: 3em;
+	word-wrap:break-word;
 }

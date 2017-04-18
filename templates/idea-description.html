@@ -5,40 +5,65 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="../static/css/add.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/idea-description.css">
 		<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<!-- Navbar CSS -->
+  		<style type="text/css">
+  			.navbar-default .navbar-brand
+			{
+			    position: absolute;
+			    width: 100%;
+			    left: 0;
+			    text-align: center;
+			    margin:0 auto;
+			    background-color: #292735;
+			}
+			.navbar-toggle {
+			    z-index:3;
+			}
+  		</style>
+  		<!-- Navbar -->
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  					<a class="navbar-brand" href="{{ url_for('index') }}" style="font-family: Just Another Hand, Verdana, sans-serif; font-size: 3em; color: white">Creative Universe</a>
+  				</div>
+  			</div>
+  		</nav>
 	</head>
 
 	<body>
 		<!-- Main header -->
 		<div class="container">
 			<table class="table">
-			<h1><u>Idea Title:</u>
+			<h2><b><u>Idea Title:</u></b></h2>
+			<p>
 			{% for value in name %} 
 				{% for element in value %}
 					{{ element }} 
 				{% endfor %}
 			{% endfor %} 
-			</h1>
+			</p>
 			<hr>
-			<h1><u>Category:</u>
+			<h2><b><u>Category:</u></b></h2>
+			<p>
 			{% for value in category %} 
 				{% for element in value %}
 					{{ element }} 
 				{% endfor %}
 			{% endfor %} 
-			</h1>
+			</p>
 			<hr>
-			<h1><u>Description:</u></h1>
-			<h2>
+			<h2><b><u>Description:</u></b></h2>
+			<p>
 				{% for value in description %} 
 					{% for element in value %}
 						{{ element }} 
 					{% endfor %}
 				{% endfor %} 
-			</h2>
+			</p>
 			</table>
 		</div>
 	</body>

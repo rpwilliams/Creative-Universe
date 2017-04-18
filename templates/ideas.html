@@ -9,6 +9,29 @@
 		<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<!-- Navbar CSS -->
+  		<style type="text/css">
+  			.navbar-default .navbar-brand
+			{
+			    position: absolute;
+			    width: 100%;
+			    left: 0;
+			    text-align: center;
+			    margin:0 auto;
+			    background-color: #292735;
+			}
+			.navbar-toggle {
+			    z-index:3;
+			}
+  		</style>
+  		<!-- Navbar -->
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  					<a class="navbar-brand" href="{{ url_for('index') }}" style="font-family: Just Another Hand, Verdana, sans-serif; font-size: 3em; color: white">Creative Universe</a>
+  				</div>
+  			</div>
+  		</nav>
 	</head>
 
 	<body>
@@ -16,7 +39,7 @@
 		<div class="container">
 			<div class="panel panel-default col-lg-10" style="color: black; font-family: Verdana">
 				<div class="panel-heading"><h4><b>Ideas</b></h4><i>Click an idea for more information</i></div>
-				<div class="panel-body" style="min-height: 600px; max-height: 600px; overflow-y:scroll;">
+				<div class="panel-body" style="min-height: 700px; max-height: 700px; overflow-y:scroll;">
 					<table class = "table">
 						<thead>
 							<th> Idea Name </th>

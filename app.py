@@ -12,7 +12,7 @@ app.config['MYSQL_DATABASE_DB'] = 'rpwilliams96'
 app.config['MYSQL_DATABASE_HOST'] = 'mysql.cs.ksu.edu'
 mysql.init_app(app)
 
-""" App route functions """
+### App route functions ###
 
 @app.route('/')
 def index():
@@ -46,7 +46,7 @@ def ideaAdded():
 	query = execute_query("""INSERT INTO Ideas(name, category, description) VALUES (%s, %s, %s)""", [idea['title'], idea['category'], idea['description']])
 	return render_template('idea-added.html')
 
-""" SQL Functions """
+### SQL Functions ###
 
 @app.route("/viewdb")
 def viewdb():

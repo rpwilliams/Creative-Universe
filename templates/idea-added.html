@@ -9,12 +9,34 @@
 		<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  		<style type="text/css">
+  			.navbar-default .navbar-brand
+			{
+			    position: absolute;
+			    width: 100%;
+			    left: 0;
+			    text-align: center;
+			    margin:0 auto;
+			    background-color: #292735;
+			}
+			.navbar-toggle {
+			    z-index:3;
+			}
+  		</style>
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  					<a class="navbar-brand" href="{{ url_for('index') }}" style="font-family: Just Another Hand, Verdana, sans-serif; font-size: 3em; color: white">Creative Universe</a>
+  				</div>
+  			</div>
+  		</nav>
 	</head>
 
 	<body>
-		<div class = "container text-center" style="font-family: Verdana">
-			<h2><b>Thanks! Your idea has been sent for approval.</b></h2>
-			<p>In our lifetime, we have thousands of ideas that go to the grave with us. It is my goal to bring your brilliance into the universe where it belongs. People like you are how the world will become a better place.</p>
+		<div class = "container" style="font-family: Verdana">
+			<h2 class="text-center"><b>Thanks! Your idea has been sent for approval.</b></h2>
+			<p class="text-left">In our lifetime, we have thousands of ideas that go to the grave with us. It is my goal to bring your brilliance into the universe so that it can be shared with others.<a href="{{ url_for('ideas')}}"> In the mean time, click here to explore ideas already submitted!</a></p>
 		</div>
 	</body>
 </html>
